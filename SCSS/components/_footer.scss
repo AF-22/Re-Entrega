@@ -1,0 +1,135 @@
+@import '../base/variables';
+@import '../base/mixin';
+
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px;
+    background: linear-gradient(-30deg, #16213E, #0F3460, #16213E);
+}
+
+.footer__container {
+    border-top: .5rem solid $background-secundary;
+    padding-top: 7rem;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    margin: 2rem;
+}
+
+.footer__head {
+    @include flex;
+    gap: 2rem;
+    margin: 2rem;
+    padding-top: 2rem;
+}
+
+.footer__btn {
+    width: 5rem;
+    height: 5rem;
+    border: .2rem solid $color-primary;
+    border-radius: 50%;
+    font-size: 3rem;
+    color: $color-primary;
+    @include flex;
+    transition: all 400ms ease;
+}
+
+.footer__btn:hover {
+    transform: translateY(-1rem);
+    border-color: $color-secundary;
+}
+
+.aboutus__container p {
+    padding: 1rem 0 1rem 1rem;
+}
+
+.aboutus__container ul {
+    padding: 1rem 0 1rem 0;
+}
+
+.footer__container .sec h2 {
+    position: relative;
+    color: $color-title;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.footer__container .sec h2::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: $color-primary;
+}
+
+.footer__container .sec p {
+    color: $color-title;
+}
+
+.navs__links {
+    position: relative;
+    padding:1rem;
+}
+
+.navs__links li a {
+    @include text-style;
+    color: $color-title;
+    margin-bottom: 10px;
+}
+
+.navs__links li a:hover {
+    color: $color-secundary;
+}
+
+.contact__info {
+    position: relative;
+    padding:1rem;
+}
+
+.contact__info li {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+}
+
+.contact__info li span:nth-child(1) {
+    color: $color-title;
+    font-size: 20px;
+}
+
+.footer__contact li a {
+    @include text-style;
+    color: $color-title;
+}
+
+
+@media screen and (max-width: 1024px) {
+
+    footer {
+        padding: 40px;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============= MEDIA QUERIES - PHONES ============= */
+
+@media screen and (max-width: 858px) {
+
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__title {
+        font-size: 2rem;
+    }
+}
